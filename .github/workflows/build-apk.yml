@@ -27,7 +27,14 @@ jobs:
         uses: android-actions/setup-android@v3
         with:
           api-level: 35
-          licenses: all
+
+      - name: Accept Android SDK licenses
+        run: yes | sdkmanager --licenses
+
+      - name: Verify gradle wrapper
+        run: |
+          ls -la gradle/wrapper/
+          head -5 gradle/wrapper/gradle-wrapper.properties
 
       - name: Make gradlew executable
         run: chmod +x gradlew
