@@ -27,8 +27,7 @@ jobs:
         uses: android-actions/setup-android@v3
         with:
           api-level: 35
-          ndk-version: r27c
-          licenses: android-sdk-license-5be876d8e38d9a0a5c5547c07f8b7d7f5401ea3c
+          licenses: all
 
       - name: Make gradlew executable
         run: chmod +x gradlew
